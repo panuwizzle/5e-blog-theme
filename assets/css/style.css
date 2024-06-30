@@ -1,0 +1,15 @@
+body {
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Update CSS variables */
+    }
+
+    body {
+        background-image: url(/assets/background_texture.png);
+    }
+}
