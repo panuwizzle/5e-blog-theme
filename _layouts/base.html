@@ -31,6 +31,12 @@
                 });
             });
 
+            const  $sideToggle = document.getElementById('side-toggle');
+            $sideToggle.addEventListener('click', () => {
+                const $menu = document.getElementById('side-menu');
+                $menu.classList.toggle('is-hidden-touch');
+            });
+
         });
     </script>
 </body>

@@ -3,8 +3,9 @@ layout: base
 ---
 
 <section class="section">
+  
   <div class="container columns ">
-    <aside class="column is-one-quarter menu">
+    <aside id="side-menu" class="column is-half-tablet is-one-quarter-desktop menu is-hidden-touch">
       <ul class="menu-list">
         {% for menu in site.data[page.menu] %}
         <li><a href="{{ menu.url}}">{{ menu.name }}</a>
@@ -29,8 +30,11 @@ layout: base
         {% endfor %}
       </ul>
     </aside>
-
+    
     <article class="column page content">
+      <button id="side-toggle" class="button bd-docs-button js-toggle is-hidden-desktop" data-target="js-docs">
+        TOC
+      </button>
       {{ content }}
 
     </article>
