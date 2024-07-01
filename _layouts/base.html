@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
 
 {%- include head.html -%}
 
 <body>
     {%- include header.html -%}
 
-    {{ content }}    
+    {{ content }}
 
     {%- include footer.html -%}
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -31,11 +31,13 @@
                 });
             });
 
-            const  $sideToggle = document.getElementById('side-toggle');
-            $sideToggle.addEventListener('click', () => {
-                const $menu = document.getElementById('side-menu');
-                $menu.classList.toggle('is-hidden-touch');
-            });
+            const $sideToggle = document.getElementById('side-toggle');
+            if ($sideToggle) {
+                $sideToggle.addEventListener('click', () => {
+                    const $menu = document.getElementById('side-menu');
+                    $menu.classList.toggle('is-hidden-touch');
+                });
+            }
 
         });
     </script>
