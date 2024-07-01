@@ -5,21 +5,28 @@ layout: base
 <section class="section">
   <div class="container columns ">
     <aside class="column is-one-quarter menu">
-      <p class="menu-label">General</p>
-
       <ul class="menu-list">
-        <li><a>link 1</a></li>
-        <li><a>link 1</a></li>
-        <li><a>link 1</a></li>
-        <li><a>link 1</a></li>
-        <li>
-          <a class="is-active">Manage Your Team</a>
+        {% for menu in site.data[page.menu] %}
+        <li><a href="{{ menu.url}}">{{ menu.name }}</a>
+          {% if menu.children[0] %}
           <ul class="menu-list">
-            <li><a>Members</a></li>
-            <li><a>Plugins</a></li>
-            <li><a>Add a member</a></li>
+            {% for submenu in menu.children %}
+            <li><a href="{{ submenu.url}}">{{ submenu.name }}</a>
+              {% if submenu.children[0] %}
+              <ul class="menu-list">
+                {% for submenu2 in submenu.children %}
+
+                <li><a href="{{ submenu2.url}}">{{ submenu2.name }}</a></li>
+                  {% endfor %}
+
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
           </ul>
+          {% endif %}
         </li>
+        {% endfor %}
       </ul>
     </aside>
 
